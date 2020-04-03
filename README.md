@@ -1,9 +1,7 @@
 # portfolio
 
-## Project setup
-```
-npm install
-```
+## portfolio url
+https://myfirstfirebase-b14c9.web.app
 
 ### Compiles and hot-reloads for development
 ```
