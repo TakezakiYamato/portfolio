@@ -3,6 +3,11 @@
 ## portfolio url
 https://myfirstfirebase-b14c9.web.app
 
+## Project setup
+```
+npm install
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
