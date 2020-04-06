@@ -1,5 +1,8 @@
 # portfolio
 
+## portfolio url
+https://myfirstfirebase-b14c9.web.app
+
 ## Project setup
 ```
 npm install
