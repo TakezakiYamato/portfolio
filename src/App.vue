@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <Header/>
-    <Main/>
-    <About/>
-    <Skill/>
+    <Header />
+    <Main />
+    <About />
+    <Skill />
   </div>
 </template>
 
@@ -26,5 +26,7 @@
 </script>
 
 <style>
-
+#app {
+  background-color: white;
+}
 </style>
