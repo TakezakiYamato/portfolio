@@ -1,6 +1,8 @@
 <template>
   <div id="aboutSection">
-    <div id="aboutTitle">About</div>
+    <div id="aboutTitle">
+      About
+    </div>
     <div id="aboutExplain">
       熊本県天草市出身。西南学院大学経済学部では
       行動経済学を専攻し、よりリアルな経済学を
@@ -24,15 +26,17 @@
 <style scoped>
   #aboutSection {
     text-align: center;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
     width: 100;
     height: auto;
   }
+
   #aboutTitle {
-    color: #20879F;
+    color: #20879f;
     font-size: 18pt;
-    text-shadow: 1px 1px 3px #e8eaf6;   
+    text-shadow: 1px 1px 3px #e8eaf6;
   }
+
   #aboutExplain {
     margin: 30;
     color: #707070;
