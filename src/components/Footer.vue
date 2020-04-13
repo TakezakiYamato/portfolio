@@ -7,18 +7,26 @@
       mdi-arrow-up-bold-box-outline
     </v-icon>
     <div id="copyRight">
-      ©︎Seattleconsulting
+      {{ copyRight }}
     </div>
   </div>
 </template>
 
 <script>
-
+  export default ({
+    name: "FooterSection",
+    data(){
+      return{
+        copyRight: '©︎Seattleconsulting'
+      }
+    }
+  })
 </script>
 
 
 <style>
 #footerSection {
+  text-align: center;
   background: linear-gradient(#80e1f7, #06c1e6);
   width: 100#;
   height: auto;

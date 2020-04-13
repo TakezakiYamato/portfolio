@@ -18,6 +18,7 @@
  import Vision from './components/Vision'
  import Footer from './components/Footer'
 
+
  export default {
    components: {
      Header,

@@ -1,51 +1,43 @@
 <template>
-  <v-app>
-    <v-navigation-drawer
-      v-model="drawer"
-      app
+  <div id="headerSection">
+    <div>
+      <v-app-bar-nav-icon @click="toggle" />
+    </div>
+    <Drawer
+      align="left"
+      :closeable="true"
+      @close="toggle"
     >
-      <v-list-item
-        v-for="nav_list in nav_lists"
-        :key="nav_list"
-      >
-        <v-list-item-content>
-          <v-list-item-title>{{ nav_list }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-navigation-drawer>
-    <v-app-bar
-      color="#F3F3F3"
-      app
-    >
-      <v-app-bar-nav-icon @click="drawer=!drawer" />
-      <v-toolbar-title>portfolio</v-toolbar-title>
-    </v-app-bar>
-  </v-app>
+      <div v-if="open">
+        content here
+      </div>
+    </Drawer>
+  </div>
 </template>
 
 <script>
- export default {
-   data(){
-     return{
-       drawer: null,
-       nav_lists:[
-         'Home',
-         'About me',
-         'Skill Sets',
-         'Vision',
-         'Customize Item1',
-         'Customize Item2'
-       ]
-     }
-   }
- }
+  import Drawer from "vue-simple-drawer";
 
+  export default ({
+    name: "HeaderSection",
+    components: {
+      Drawer
+    },
+    data(){
+      return{
+        open: false
+      }
+    },
+    methods:{
+      toggle() {
+        this.open = !this.open
+      }
+    }
+ })
 </script>
 
 <style scoped>
-  .something {
-    color: var(--v-primary-base);
+  #headerSection {
+    width: auto;
   }
 </style>
-
-

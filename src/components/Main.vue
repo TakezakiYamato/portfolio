@@ -16,7 +16,15 @@
 
 
 <script>
-
+  export default ({
+    name: "MainSection",
+    data(){
+      return{
+        username: 'Yamato Takezaki',
+        companyName: 'Seattle consulting'
+      }
+    }
+  })
 </script>
 
 
