@@ -1,21 +1,56 @@
 <template>
   <div id="skillSection">
-    <div id="skillTitle">
-      Skill Set
-    </div>
-    <div id="skillExplain" />
+    <div>{{ skillTitle }}</div>
+    <div>{{ skillExplain }}</div>
     <label for="gitHubLabel">GitHub</label>
-    <a
-      id="gitHubLink"
-      href="https://github.com/TakezakiYamato"
-      target="_brank"
-    >https://github.com/TakezakiYamato</a>
+    <a :href="url">https://github.com/TakezakiYamato</a>
     <a>Front-end</a>
+    <div id="skillCategories">
+      <v-tabs
+        v-model="skillCategories"
+        centered
+        grow
+      >
+        <v-tab href="#frontEnd">
+          Front End
+        </v-tab>
+        <v-tab href="#backEnd">
+          Back End
+        </v-tab>
+        <v-tab href="#debOps">
+          Dev Option
+        </v-tab>
+        <v-tabs-item v-model="skillCategories">
+          <v-tab-item value="frontEnd">
+            {{ HTML }}
+          </v-tab-item>
+          <v-tab-item value="backEnd">
+            {{ SCRIPT }}
+          </v-tab-item>
+          <v-tab-item value="debOps">
+            {{ GIT }}
+          </v-tab-item>
+        </v-tabs-item>
+      </v-tabs>
+    </div>
   </div>
 </template>
 
 <script>
-
+export default ({
+  name: "SkillSection",
+  data(){
+    return {
+      skillTitle: 'Skill Set',
+      skillExplain: 'UX領域では、ユーザーリサーチを通してのペルソナ定義の経験があります。UI領域だと、iOSのガイドラインを一通り読み込んでいる為、HIGに沿ったUIデザインの提案ができます。',
+      url: "https://github.com/TakezakiYamato",
+      skillCategories: 'frontEnd',
+      HTML: 'HTML',
+      SCRIPT: 'SCRIPT',
+      GIT: 'GIT'
+    }
+  }
+})
 </script>
 
 <style scoped>
@@ -41,12 +76,17 @@
 
 label[for="gitHubLabel"] {
   color: #20879f;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #gitHubLink {
   color: #20879f;
   font-size: 12px;
+}
+
+#skillCategories {
+  height: 400px;
+  margin: auto;
 }
 
 </style>
