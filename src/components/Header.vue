@@ -1,15 +1,18 @@
 <template>
   <div id="headerSection">
-    <div>
-      <v-app-bar-nav-icon @click="toggle" />
+    <div class="header">
+      <v-app-bar-nav-icon
+        @click="toggle"
+      />
     </div>
     <Drawer
+      class="drawer"
       align="left"
       :closeable="true"
       @close="toggle"
     >
       <div v-if="open">
-        content here
+        <Menu />
       </div>
     </Drawer>
   </div>
@@ -17,11 +20,13 @@
 
 <script>
   import Drawer from "vue-simple-drawer";
+  import Menu from "./Menu";
 
   export default ({
     name: "HeaderSection",
     components: {
-      Drawer
+      Drawer,
+      Menu
     },
     data(){
       return{
@@ -36,8 +41,14 @@
  })
 </script>
 
-<style scoped>
-  #headerSection {
-    width: auto;
-  }
+<style lang="scss">
+@import "~bootstrap/scss/bootstrap-reboot",
+  "~bootstrap/scss/buttons";
+
+#headerSection {
+  background-color: #f3f3f3;
+  height: auto;
+  width: 100%;
+}
 </style>
+

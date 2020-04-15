@@ -25,7 +25,7 @@
 
 <style>
 #visionSection {
-  background: linear-gradient(#f5f5f5, #06c1e6);
+  background: white;
   width: 100%;
   height: auto;
   text-align: center;

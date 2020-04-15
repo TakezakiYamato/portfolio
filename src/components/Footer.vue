@@ -1,11 +1,16 @@
 <template>
   <div id="footerSection">
-    <v-icon
-      large
-      color="orange darken-2"
+    <a
+      href="#"
+      @click="clickSmoothScroll()"
     >
-      mdi-arrow-up-bold-box-outline
-    </v-icon>
+      <v-icon
+        large
+        color="orange darken-2"
+      >
+        mdi-arrow-up-bold-box-outline
+      </v-icon>
+    </a>
     <div id="copyRight">
       {{ copyRight }}
     </div>
@@ -19,7 +24,19 @@
       return{
         copyRight: '©︎Seattleconsulting'
       }
+    },
+    methods: {
+    clickSmoothScroll () {
+      event.preventDefault()
+      this.$SmoothScroll(
+        document.querySelector('#headerSection'),
+        400,
+        null,
+        null,
+        'y'
+      )
     }
+  }
   })
 </script>
 
