@@ -6,7 +6,7 @@
     >
       <v-icon
         large
-        color="orange darken-2"
+        color="light-blue lighten-5"
       >
         mdi-arrow-up-bold-box-outline
       </v-icon>

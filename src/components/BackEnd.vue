@@ -8,7 +8,10 @@ export default {
       data: {
         labels: ['Java', 'Ruby', 'RubyonRails', 'MySQL'],
         datasets: [{
-            data: [1, 2, 1, 3]
+            label: 'Back End',
+            data: [1, 2, 1, 3],
+            backgroundColor: '#80CBC4',
+            pointBackgroundColor: '#80CBC4'
         }]
       },
       options: {

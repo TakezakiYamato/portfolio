@@ -29,12 +29,11 @@
   width: 100%;
   height: auto;
   text-align: center;
+  padding-bottom: 24px;
 }
 
 #visionTitle {
-  margin: auto;
-  padding: 5px;
-  width: 100px;
+  margin: 8px 8px 8px 16px;
   height: 30px;
   color: #20879f;
   font-weight: bold;
@@ -43,12 +42,13 @@
 
 #visionExplain {
   margin: auto;
-  padding: 10px;
-  width: 400px;
-  height: 100px;
+  padding-bottom: 16px;
+  width: 300px;
+  height: auto;
   color: #707070;
   font-size: 12px;
   word-wrap: break-word;
+  line-height: 1.9;
 }
 
 </style>
