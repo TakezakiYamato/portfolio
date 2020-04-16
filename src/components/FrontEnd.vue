@@ -8,7 +8,10 @@ export default {
       data: {
         labels: ['HTML', 'CSS', 'Javascript', 'SCSS', 'Vue'],
         datasets: [{
-            data: [3, 2, 2, 1, 3]
+            label: 'Front-end',
+            data: [3, 2, 2, 1, 3],
+            backgroundColor: '#EF9A9A',
+            pointBackgroundColor: '#EF9A9A'
         }]
       },
       options: {

@@ -27,21 +27,27 @@ export default({
   #aboutSection {
     text-align: center;
     background-color: #f5f5f5;
-    width: 100;
+    width: 100%;
     height: auto;
+    padding: 20px;
   }
 
   #aboutTitle {
     color: #20879f;
     font-size: 18pt;
+    font-weight: bold;
     text-shadow: 1px 1px 3px #e8eaf6;
+    margin: 8px;
   }
 
   #aboutExplain {
-    margin: 30;
     color: #707070;
     font-size: 12pt;
     word-wrap: break-word;
+    margin: auto;
+    padding-bottom: 20px;
+    width: 400px;
+    line-height: 1.9;
   }
 
 </style>

@@ -1,11 +1,18 @@
 <template>
   <div id="skillSection">
-    <div>{{ skillTitle }}</div>
-    <div>{{ skillExplain }}</div>
+    <div id="skillTitle">
+      {{ skillTitle }}
+    </div>
+    <div id="skillExplain">
+      {{ skillExplain }}
+    </div>
     <label for="gitHubLabel">GitHub</label>
     <a :href="url">https://github.com/TakezakiYamato</a>
     <div id="skillCategories">
-      <v-tabs v-model="model">
+      <v-tabs
+        v-model="model"
+        grow
+      >
         <v-tab href="#tab-1">
           Front End
         </v-tab>
@@ -13,7 +20,7 @@
           Back End
         </v-tab>
         <v-tab href="#tab-3">
-          Dev Option
+          Dev Options
         </v-tab>
       </v-tabs>
       <v-tabs-items v-model="model">
@@ -23,7 +30,9 @@
               <v-chip
                 v-for="frontEnd in frontEnds"
                 :key="frontEnd"
-                class="ma-4"
+                class="ma-1"
+                color="#EF9A9A"
+                text-color="#FFFFFF"
                 label
               >
                 {{ frontEnd }}
@@ -40,7 +49,9 @@
               <v-chip
                 v-for="backEnd in backEnds"
                 :key="backEnd"
-                class="ma-4"
+                class="ma-1"
+                color="#80CBC4"
+                text-color="#FFFFFF"
                 label
               >
                 {{ backEnd }}
@@ -57,7 +68,9 @@
               <v-chip
                 v-for="option in options"
                 :key="option"
-                class="ma-4"
+                class="ma-1"
+                color="#B39DDB"
+                text-color="#FFFFFF"
                 label
               >
                 {{ option }}
@@ -92,7 +105,7 @@ export default ({
       url: "https://github.com/TakezakiYamato",
       model: 'tab-1',
       frontEnds: [
-        'HTML','CSS','Javascript','SCSS'
+        'HTML','CSS','Javascript','SCSS','vue'
       ],
       backEnds: [
         'java','Ruby','RubyonRails','MySQL'
@@ -111,34 +124,43 @@ export default ({
   background-color: #fff;
   width: 100%;
   height: auto;
+  padding: 16px;
 }
 
 #skillTitle {
   color: #20879f;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
   text-shadow: 1px 1px 3px #e8eaf6;
+  margin: 8px;
 }
 
 #skillExplain {
   color: #707070;
-  font-size: 12px;
+  font-size: 14px;
   word-wrap: break-word;
-  line-height: 0.25 em;
+  width: 410px;
+  margin: auto;
+  padding-bottom: 20px;
+  line-height: 1.9;
 }
 
 label[for="gitHubLabel"] {
   color: #20879f;
   font-size: 14px;
+  margin: 8px;
 }
 
 #gitHubLink {
   color: #20879f;
   font-size: 12px;
+  margin: 8px;
 }
 
 #skillCategories {
-  height: 400px;
+  height: auto;
   margin: auto;
+  padding: 24px;
 }
 
 .chart {
