@@ -12,6 +12,7 @@
       <v-tabs
         v-model="model"
         grow
+        show-arrows
       >
         <v-tab href="#tab-1">
           Front End
@@ -124,7 +125,7 @@ export default ({
   background-color: #fff;
   width: 100%;
   height: auto;
-  padding: 16px;
+  padding: 16px 0;
 }
 
 #skillTitle {
@@ -137,9 +138,9 @@ export default ({
 
 #skillExplain {
   color: #707070;
-  font-size: 14px;
+  font-size: 15px;
   word-wrap: break-word;
-  width: 410px;
+  width: 319px;
   margin: auto;
   padding-bottom: 20px;
   line-height: 1.9;
@@ -160,7 +161,7 @@ label[for="gitHubLabel"] {
 #skillCategories {
   height: auto;
   margin: auto;
-  padding: 24px;
+  padding: 16px 0;
 }
 
 .chart {

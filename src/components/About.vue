@@ -29,7 +29,7 @@ export default({
     background-color: #f5f5f5;
     width: 100%;
     height: auto;
-    padding: 20px;
+    padding: 16px 0;
   }
 
   #aboutTitle {
@@ -46,7 +46,7 @@ export default({
     word-wrap: break-word;
     margin: auto;
     padding-bottom: 20px;
-    width: 400px;
+    width: 318px;
     line-height: 1.9;
   }
 
