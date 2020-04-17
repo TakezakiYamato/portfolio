@@ -1,12 +1,12 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <Header />
     <Main />
     <About />
     <Skill />
     <Vision />
     <Footer />
-  </div>
+  </v-app>
 </template>
 
 
@@ -17,6 +17,7 @@
  import Skill from './components/Skill'
  import Vision from './components/Vision'
  import Footer from './components/Footer'
+
 
  export default {
    components: {

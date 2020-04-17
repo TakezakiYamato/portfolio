@@ -1,34 +1,70 @@
 <template>
   <div id="footerSection">
-    <v-icon
-      large
-      color="orange darken-2"
+    <a
+      href="#"
+      class="footer-icon"
+      @click="clickSmoothScroll()"
     >
-      mdi-arrow-up-bold-box-outline
-    </v-icon>
+      <v-icon
+        large
+        color="grey lighten1"
+      >
+        mdi-navigation
+      </v-icon>
+    </a>
     <div id="copyRight">
-      ©︎Seattleconsulting
+      {{ copyRight }}
     </div>
   </div>
 </template>
 
 <script>
-
+  export default ({
+    name: "FooterSection",
+    data(){
+      return{
+        copyRight: '©︎Seattleconsulting'
+      }
+    },
+    methods: {
+    clickSmoothScroll () {
+      event.preventDefault()
+      this.$SmoothScroll(
+        document.querySelector('#headerSection'),
+        400,
+        null,
+        null,
+        'y'
+      )
+    }
+  }
+  })
 </script>
 
 
 <style>
 #footerSection {
+  text-align: center;
   background: linear-gradient(#80e1f7, #06c1e6);
-  width: 100#;
+  width: 100%;
   height: auto;
+  padding: 32px;
+  position: relative;
+}
+
+.footer-icon {
+  position: absolute;
+  top: -20%;
+  left: 48%;
+  text-decoration: none;
 }
 
 #copyRight {
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px #e8eaf6;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 16px;
 }
 
 </style>

@@ -1,51 +1,41 @@
 <template>
-  <v-app>
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-    >
-      <v-list-item
-        v-for="nav_list in nav_lists"
-        :key="nav_list"
-      >
-        <v-list-item-content>
-          <v-list-item-title>{{ nav_list }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-navigation-drawer>
-    <v-app-bar
-      color="#F3F3F3"
-      app
-    >
-      <v-app-bar-nav-icon @click="drawer=!drawer" />
-      <v-toolbar-title>portfolio</v-toolbar-title>
-    </v-app-bar>
-  </v-app>
+  <div id="headerSection">
+    <nav class="header__nav">
+      <Menu />
+    </nav>
+  </div>
 </template>
 
 <script>
- export default {
-   data(){
-     return{
-       drawer: null,
-       nav_lists:[
-         'Home',
-         'About me',
-         'Skill Sets',
-         'Vision',
-         'Customize Item1',
-         'Customize Item2'
-       ]
-     }
-   }
- }
 
+  import Menu from "./Menu";
+
+  export default ({
+    name: "HeaderSection",
+    components: {
+      Menu
+    },
+ })
 </script>
 
-<style scoped>
-  .something {
-    color: var(--v-primary-base);
-  }
-</style>
+<style lang="scss">
+@import "~bootstrap/scss/bootstrap-reboot",
+  "~bootstrap/scss/buttons";
 
+#headerSection {
+  background-color: #f3f3f3;
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  z-index: 1;
+  top: 0;
+}
+
+.header__nav {
+  position: relative;
+  left: 0%;
+  height: 60px;
+}
+
+</style>
 
