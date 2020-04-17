@@ -2,13 +2,14 @@
   <div id="footerSection">
     <a
       href="#"
+      class="footer-icon"
       @click="clickSmoothScroll()"
     >
       <v-icon
         large
-        color="light-blue lighten-5"
+        color="grey lighten1"
       >
-        mdi-arrow-up-bold-box-outline
+        mdi-navigation
       </v-icon>
     </a>
     <div id="copyRight">
@@ -45,15 +46,25 @@
 #footerSection {
   text-align: center;
   background: linear-gradient(#80e1f7, #06c1e6);
-  width: 100#;
+  width: 100%;
   height: auto;
+  padding: 32px;
+  position: relative;
+}
+
+.footer-icon {
+  position: absolute;
+  top: -20%;
+  left: 48%;
+  text-decoration: none;
 }
 
 #copyRight {
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px #e8eaf6;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 16px;
 }
 
 </style>

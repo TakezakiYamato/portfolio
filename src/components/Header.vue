@@ -1,43 +1,20 @@
 <template>
   <div id="headerSection">
-    <div class="header">
-      <v-app-bar-nav-icon
-        @click="toggle"
-      />
-    </div>
-    <Drawer
-      class="drawer"
-      align="left"
-      :closeable="true"
-      @close="toggle"
-    >
-      <div v-if="open">
-        <Menu />
-      </div>
-    </Drawer>
+    <nav class="header__nav">
+      <Menu />
+    </nav>
   </div>
 </template>
 
 <script>
-  import Drawer from "vue-simple-drawer";
+
   import Menu from "./Menu";
 
   export default ({
     name: "HeaderSection",
     components: {
-      Drawer,
       Menu
     },
-    data(){
-      return{
-        open: false
-      }
-    },
-    methods:{
-      toggle() {
-        this.open = !this.open
-      }
-    }
  })
 </script>
 
@@ -47,8 +24,18 @@
 
 #headerSection {
   background-color: #f3f3f3;
-  height: auto;
   width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  z-index: 1;
+  top: 0;
 }
+
+.header__nav {
+  position: relative;
+  left: 0%;
+  height: 60px;
+}
+
 </style>
 

@@ -58,8 +58,8 @@
 
 #profilePicture {
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  width: 100px;
+  height: 100px;
   margin: 16px;
 }
 

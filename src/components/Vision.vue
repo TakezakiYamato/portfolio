@@ -38,15 +38,16 @@
   color: #20879f;
   font-weight: bold;
   text-shadow: 1px 1px 3px #e8eaf6;
+  font-size: 18px;
 }
 
 #visionExplain {
   margin: auto;
   padding-bottom: 16px;
-  width: 300px;
+  width: 320px;
   height: auto;
   color: #707070;
-  font-size: 12px;
+  font-size: 15px;
   word-wrap: break-word;
   line-height: 1.9;
 }
