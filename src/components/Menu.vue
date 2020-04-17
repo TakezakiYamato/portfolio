@@ -37,7 +37,7 @@
               href="#mainSection"
               class="dropdown__menu-link"
             >
-              HOME
+              Home
             </a>
           </li>
           <li class="dropdown__menu-item">
@@ -53,7 +53,7 @@
               href="#skillSection"
               class="dropdown__menu-link"
             >
-              Skill Sets
+              Skill Set
             </a>
           </li>
           <li class="dropdown__menu-item">
