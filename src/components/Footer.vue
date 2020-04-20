@@ -23,7 +23,7 @@
     name: "FooterSection",
     data(){
       return{
-        copyRight: '©︎Seattleconsulting'
+        copyRight: '©︎Seattle Consulting'
       }
     },
     methods: {
@@ -55,7 +55,7 @@
 .footer-icon {
   position: absolute;
   top: -20%;
-  left: 48%;
+  left: 50%;
   text-decoration: none;
 }
 
