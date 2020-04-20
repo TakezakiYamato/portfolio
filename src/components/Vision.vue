@@ -38,7 +38,7 @@
   color: #20879f;
   font-weight: bold;
   text-shadow: 1px 1px 3px #e8eaf6;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 #visionExplain {
