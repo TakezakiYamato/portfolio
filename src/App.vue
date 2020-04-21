@@ -18,6 +18,7 @@
   import Skill from './components/Skill'
   import Vision from './components/Vision'
   import Footer from './components/Footer'
+  import {mapGetters,mapActions} from 'vuex'
 
 
   export default {
@@ -28,36 +29,35 @@
       About,
       Skill,
       Vision,
-      Footer
+      Footer,
     },
-    data() {
-    return {
-      skills: []
+    data: function(){
+      return {
+        skills: [],
+        category: 'front-end',
       }
     },
-    mounted () {
-      this.getSkills();
+    computed: {
+      ...mapGetters({
+        get: 'getSkills',
+      }),
     },
+
+    created() {
+      this.updateSkillCategories();
+    },
+
     methods: {
-      getSkills() {
-        // dataのスキルを初期化する
-        this.skills = [];
-        // this.skillsを一時変数のitemsに参照コピーする
-        let items = this.skills;
-        // axios.getを用いてデプロイ済のfunctionにアクセスする
-        this.axios.get('https://us-central1-myfirstfirebase-b14c9.cloudfunctions.net/skills')
-          .then((response) => {
-            response.data.forEach(function(skill) {
-              // 取得したデータを１件ずつ配列に設定する
-              items.push(skill);
-            })
-          })
-          .catch((e) => {
-            alert(e);
-          });
-      console.log(items);
-      }
-    }
+      ...mapActions(['updateSkillCategories']),
+
+      getSkill() {
+        this.get(this.category);
+      },
+
+      async test() {
+        return await this.updateSkillCategories();
+      },
+    },
   }
 </script>
 

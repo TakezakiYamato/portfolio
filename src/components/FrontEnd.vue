@@ -1,12 +1,13 @@
 <script>
 import { Radar } from 'vue-chartjs'
+import { mapGetters,mapActions } from 'vuex'
 
 export default {
   extends: Radar,
   data(){
     return {
       data: {
-        labels: ['HTML', 'CSS', 'Javascript', 'SCSS', 'Vue'],
+        label: [],
         datasets: [{
             label: 'Front-end',
             data: [3, 2, 2, 1, 3],
@@ -28,6 +29,26 @@ export default {
         }
       }
     }
+  },
+  computed: {
+      ...mapGetters({
+        get: 'getSkills',
+      }),
+  },
+  created() {
+      this.updateSkillCategories();
+    },
+
+  methods: {
+    ...mapActions(['updateSkillCategories']),
+
+    getSkill() {
+      this.get(this.category);
+    },
+
+    async test() {
+      return await this.updateSkillCategories();
+    },
   },
   mounted () {
     this.renderChart(this.data, this.options)

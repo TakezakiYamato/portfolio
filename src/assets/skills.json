@@ -6,14 +6,68 @@
       "score": 3
     },
     {
-      "category": "back-end",
-      "name": "Java",
+      "category": "front-end",
+      "name": "CSS",
+      "score": 2
+    },
+    {
+      "category": "front-end",
+      "name": "Javascript",
+      "score": 2
+    },
+    {
+      "category": "front-end",
+      "name": "SCSS",
+      "score": 1
+    },
+    {
+      "category": "front-end",
+      "name": "Vue",
       "score": 3
     },
     {
-      "category": "devops",
-      "name": "github",
+      "category": "back-end",
+      "name": "Java",
+      "score": 1
+    },
+    {
+      "category": "back-end",
+      "name": "Ruby",
+      "score": 2
+    },
+    {
+      "category": "back-end",
+      "name": "RubyonRails",
+      "score": 1
+    },
+    {
+      "category": "back-end",
+      "name": "MySQL",
+      "score": 3
+    },
+    {
+      "category": "DevOps",
+      "name": "Linux",
+      "score": 3
+    },
+    {
+      "category": "DevOps",
+      "name": "Node",
+      "score": 3
+    },
+    {
+      "category": "DevOps",
+      "name": "GitHub",
+      "score": 4
+    },
+    {
+      "category": "DevOps",
+      "name": "Firebase",
       "score": 2
     }
   ]
 }
+
+
+
+
