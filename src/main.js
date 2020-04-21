@@ -5,10 +5,17 @@ import colors from 'vuetify/lib/util/colors'
 import smoothScroll from 'vue-smoothscroll'
 Vue.use(smoothScroll)
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios)
+
+import store from './store.js'
+
 Vue.config.productionTip = false
 
 new Vue({
   vuetify,
+  store,
   render: h => h(App),
   theme: {
     themes: {
