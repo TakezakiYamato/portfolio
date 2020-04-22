@@ -8,31 +8,50 @@ Vue.use(Vuex) //vuexが読み込まれている
 
 // storeをエクスポート
 export default new Vuex.Store({
+  // like data of component
   state: {
-    skillCategories: [],
+    skills: [],
+    loaded: false
   },
-
+  // コンポーネントでいう算出プロパティの事
   getters: {
-    getSkills: (state) => (category)=> {
-      if (state.skillCategories.length > 0) {
-        return state.skillCategories.find((skill) => skill.category===category);
+    skillName: (state) => (index) => {
+      const skillNameArray = []
+      if(state.skills[index]){
+        state.skills[index].skill.forEach((Skill) => {
+          skillNameArray.push(Skill.name)
+        })
       }
-      return [];
+      return skillNameArray
+    },
+    skillScore: (state)=> (index) => {
+      const skillScoreArray = []
+      if(state.skills[index]){
+        state.skills[index].skill.forEach((Skill)=> {
+          skillScoreArray.push(Skill.score)
+        })
+      }
+      return skillScoreArray
     }
+    
   },
+  // state状態を更新する場所,メソッド
   mutations: {
-    setSkillCategories(state,payload) {
-      state.skillCategories = payload.skillCategories;
+    setSkills(state, payload) {
+      console.log(payload);
+      state.skills = payload.skills;
+      state.loaded = true
     },
   },
+  // mutationsをコミットする場所、非同期通信で主に処理する
   actions: {
-    async updateSkillCategories({ commit }){
-      const skillCategories = [];
-      const res = await axios.get("https://us-central1-myfirstfirebase-b14c9.cloudfunctions.net/skills");
-      res.data.forEach((category) => {
-        skillCategories.push(category);
-      });
-      commit('setSkillCategories',{skillCategories});
-    },
-  },
+    //引数分割束縛でcommitするための情報描きますよの準備
+    getSkills: function({commit}) {
+      return axios.get("https://us-central1-myfirstfirebase-b14c9.cloudfunctions.net/skills")
+        .then(response => {
+          const skills = response.data
+          commit('setSkills', {skills})
+        })
+    }
+  }
 })

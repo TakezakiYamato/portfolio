@@ -2,7 +2,6 @@
   <v-app id="app">
     <Header />
     <Main />
-    <div>{{ this.skills }}</div>
     <About />
     <Skill />
     <Vision />
@@ -18,8 +17,6 @@
   import Skill from './components/Skill'
   import Vision from './components/Vision'
   import Footer from './components/Footer'
-  import {mapGetters,mapActions} from 'vuex'
-
 
   export default {
     name:'App',
@@ -37,26 +34,9 @@
         category: 'front-end',
       }
     },
-    computed: {
-      ...mapGetters({
-        get: 'getSkills',
-      }),
-    },
 
     created() {
-      this.updateSkillCategories();
-    },
-
-    methods: {
-      ...mapActions(['updateSkillCategories']),
-
-      getSkill() {
-        this.get(this.category);
-      },
-
-      async test() {
-        return await this.updateSkillCategories();
-      },
+      this.$store.dispatch('getSkills')
     },
   }
 </script>

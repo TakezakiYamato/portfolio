@@ -8,8 +8,8 @@ export default {
       data: {
         labels: ['Java', 'Ruby', 'RubyonRails', 'MySQL'],
         datasets: [{
+            data: [],
             label: 'Back End',
-            data: [1, 2, 1, 3],
             backgroundColor: '#80CBC4',
             pointBackgroundColor: '#80CBC4'
         }]
@@ -30,7 +30,21 @@ export default {
     }
   },
   mounted () {
+    this.getSkills()
+    this.getScores()
     this.renderChart(this.data, this.options)
+  },
+  methods: {
+    getSkills() {
+      // gettersの該当する配列を持ってくる
+      const skills = this.$store.getters.skillName(1)
+      // labelに代入する
+      this.data.labels = skills
+    },
+    getScores() {
+      const scores = this.$store.getters.skillScore(1)
+      this.data.datasets[0].data = scores
+    }
   }
 }
 </script>
