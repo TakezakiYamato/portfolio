@@ -7,10 +7,10 @@ export default {
   data(){
     return {
       data: {
-        labels: ['Linux', 'Node', 'Git', 'GitHub', 'Firebase'],
+        labels: [],
         datasets: [{
+            data: [],
             label: 'Dev Options',
-            data: [3, 3, 4, 3, 2],
             backgroundColor: '#B39DDB',
             pointBackgroundColor: '#B39DDB'
         }]
@@ -31,7 +31,21 @@ export default {
     }
   },
   mounted () {
+    this.getSkills()
+    this.getScores()
     this.renderChart(this.data, this.options)
+  },
+  methods: {
+    getSkills() {
+      // gettersの該当する配列を持ってくる
+      const skills = this.$store.getters.skillName(2)
+      // labelに代入する
+      this.data.labels = skills
+    },
+    getScores() {
+      const scores = this.$store.getters.skillScore(2)
+      this.data.datasets[0].data = scores
+    }
   }
 }
 </script>

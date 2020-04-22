@@ -1,6 +1,5 @@
 <script>
 import { Radar } from 'vue-chartjs'
-import { mapGetters,mapActions } from 'vuex'
 
 export default {
   extends: Radar,
@@ -9,8 +8,8 @@ export default {
       data: {
         label: [],
         datasets: [{
+            data: [],
             label: 'Front-end',
-            data: [3, 2, 2, 1, 3],
             backgroundColor: '#EF9A9A',
             pointBackgroundColor: '#EF9A9A'
         }]
@@ -30,28 +29,23 @@ export default {
       }
     }
   },
-  computed: {
-      ...mapGetters({
-        get: 'getSkills',
-      }),
-  },
-  created() {
-      this.updateSkillCategories();
-    },
-
-  methods: {
-    ...mapActions(['updateSkillCategories']),
-
-    getSkill() {
-      this.get(this.category);
-    },
-
-    async test() {
-      return await this.updateSkillCategories();
-    },
-  },
+  // チャート生成のインスタンスを作成
   mounted () {
+    this.getSkills()
+    this.getScores()
     this.renderChart(this.data, this.options)
+  },
+  methods: {
+    getSkills() {
+      // gettersの該当する配列を持ってくる
+      const skills = this.$store.getters.skillName(0)
+      // labelに代入する
+      this.data.labels = skills
+    },
+    getScores() {
+      const scores = this.$store.getters.skillScore(0)
+      this.data.datasets[0].data = scores
+    }
   }
 }
 </script>
