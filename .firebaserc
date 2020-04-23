@@ -1,5 +1,21 @@
 {
   "projects": {
     "default": "myfirstfirebase-b14c9"
+  },
+  "targets": {
+    "myfirstfirebase-b14c9": {
+      "hosting": {
+        "portfolio": [
+          "myfirstfirebase-b14c9"
+        ]
+      }
+    },
+    "dev-portfolio-5ed3a": {
+      "hosting": {
+        "portfolio": [
+          "dev-portfolio-5ed3a"
+        ]
+      }
+    }
   }
 }
