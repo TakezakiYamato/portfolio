@@ -11,24 +11,34 @@
 
 
 <script>
- import Header from './components/Header'
- import Main from './components/Main'
- import About from './components/About'
- import Skill from './components/Skill'
- import Vision from './components/Vision'
- import Footer from './components/Footer'
+  import Header from './components/Header'
+  import Main from './components/Main'
+  import About from './components/About'
+  import Skill from './components/Skill'
+  import Vision from './components/Vision'
+  import Footer from './components/Footer'
 
+  export default {
+    name:'App',
+    components: {
+      Header,
+      Main,
+      About,
+      Skill,
+      Vision,
+      Footer,
+    },
+    data: function(){
+      return {
+        skills: [],
+        category: 'front-end',
+      }
+    },
 
- export default {
-   components: {
-     Header,
-     Main,
-     About,
-     Skill,
-     Vision,
-     Footer
-   }
- }
+    created() {
+      this.$store.dispatch('getSkills')
+    },
+  }
 </script>
 
 <style>

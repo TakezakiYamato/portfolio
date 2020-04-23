@@ -24,7 +24,10 @@
           Dev Options
         </v-tab>
       </v-tabs>
-      <v-tabs-items v-model="model">
+      <v-tabs-items
+        v-if="loaded"
+        v-model="model"
+      >
         <v-tab-item value="tab-1">
           <v-card>
             <v-card-text>
@@ -114,6 +117,11 @@ export default ({
       options: [
         'Linux','Node','Git','GitHub','Firebase'
       ],
+    }
+  },
+  computed: {
+    loaded(){
+      return this.$store.state.loaded
     }
   }
 })
