@@ -13,9 +13,11 @@ export default new Vuex.Store({
     skills: [],
     loaded: false
   },
-  // コンポーネントでいう算出プロパティの事
+  // コンポーネントでいう算出プロパティの事=データ加工
   getters: {
+    //skillの名前の配列を取り出す
     skillName: (state) => (index) => {
+      //関数の処理内容
       const skillNameArray = []
       if(state.skills[index]){
         state.skills[index].skill.forEach((Skill) => {
@@ -24,6 +26,8 @@ export default new Vuex.Store({
       }
       return skillNameArray
     },
+
+
     skillScore: (state)=> (index) => {
       const skillScoreArray = []
       if(state.skills[index]){
@@ -33,9 +37,9 @@ export default new Vuex.Store({
       }
       return skillScoreArray
     }
-    
+
   },
-  // state状態を更新する場所,メソッド
+  // state状態を更新する場所,メソッド.上書きしたい。
   mutations: {
     setSkills(state, payload) {
       console.log(payload);
@@ -47,7 +51,8 @@ export default new Vuex.Store({
   actions: {
     //引数分割束縛でcommitするための情報描きますよの準備
     getSkills: function({commit}) {
-      return axios.get("https://us-central1-myfirstfirebase-b14c9.cloudfunctions.net/skills")
+      const functionsUrl = 'https://us-central1-' + process.env.VUE_APP_FUNCTIONS_API + '.cloudfunctions.net/skills';
+      return axios.get(functionsUrl)
         .then(response => {
           const skills = response.data
           commit('setSkills', {skills})
@@ -55,3 +60,4 @@ export default new Vuex.Store({
     }
   }
 })
+
