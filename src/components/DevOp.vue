@@ -38,12 +38,12 @@ export default {
   methods: {
     getSkills() {
       // gettersの該当する配列を持ってくる
-      const skills = this.$store.getters.skillName(2)
+      const skills = this.$store.getters.skillName(0)
       // labelに代入する
       this.data.labels = skills
     },
     getScores() {
-      const scores = this.$store.getters.skillScore(2)
+      const scores = this.$store.getters.skillScore(0)
       this.data.datasets[0].data = scores
     }
   }
